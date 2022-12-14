@@ -18,16 +18,20 @@ def change_contact():
         change_contact()
     else:
         print(f"Выбран контакт для изменения\n", *find)
-        sear = input("Введите новое значение для контакта: \n> ")
-        find[0] = '\n' + sear
+        find[0]  = input("Введите новое значение для контакта: \n> ")
         res = []
         res = last+find
         with open('bd.txt', 'w') as file:
-            for item in res:
-                file.write(f'{item}')
+            for item in sorted(res):
+                if '\n' in item:
+                    file.write(f'{item}')
+                else:
+                    file.write(f'{item}\n')
         print('Контакт успешно изменён\nХотите вернуться в главное меню?')
         # Неплохо было бы после отфильтровать полученный список(только нужно опред,
         #по какому принципу будем приводить в порядок(буква фамилии к примеру)
         #Здесь будет проверка и возврат в главное меню
+
+
 change_contact()
 
