@@ -1,13 +1,15 @@
-from typing import Optional
+from typing import List, Optional
+
 
 def give_int_num(input_string: str,
-            min_num: Optional[int] = None,
-            max_num: Optional[int] = None) -> int:
+                 min_num: Optional[int] = None,
+                 max_num: Optional[int] = None) -> int:
     """
     Выпытывает у пользователя число в диапзоне от  min_num до  mах_num:
 
     Args:
     input_string - предложение ввода
+
     Returns:
     int - число
     """
@@ -25,23 +27,97 @@ def give_int_num(input_string: str,
             print('Похоже это не число, попробуте еще раз')
 
 
-def read_data_string(filename: str , coding:  str) -> str:
+def read_from_txt(path_file: str, coding: str) -> str:
+    """
+    Считывает txt файл и возвращает строку 
 
-    with open(filename, 'r', encoding=coding) as file:
-        data = file.read()
-    return data
+    Args:
+    path_file - путь до файла,
+    coding - кодировка ('utf-8')
+
+    Returns:
+    str - строка
+    """
+    with open(path_file, 'r', encoding=coding) as r_file:
+        data = r_file.read()
+    return (data)
 
 
+def write_string_to_txt(path_file: str, coding: str, string_line: str):
+    """
+    Записывает строку в файл 
 
-def write_string_to_file(filename: str , coding:  str, string: str):
+    Args:
+    path_file - путь до файла, 
+    coding - кодировка ('utf-8'),
+    string_line - строка для записи
+    """
+    with open(path_file, 'w', encoding=coding) as w_file:
+        w_file.write(string_line)
 
-    with open(filename, 'w', encoding=coding) as file:
-        file.write(string)
+
+def add_string_to_txt(path_file: str, coding: str, string_line: str):
+    """
+    Добавляет строку в файл 
+
+    Args:
+    path_file - путь до файла,
+    coding - кодировка ('utf-8'),
+    string_line - строка для записи
+    """
+    with open(path_file, 'a', encoding=coding) as w_file:
+        w_file.write(string_line)
 
 
+def find_by_name(name: str, list_file: List[List[str]]) -> List[List[str]]:
+    """
+    возвращает список строк в которых найдено заданное имя {name}
+
+    Args:
+    name - имя для поиска,
+    list_file - список сформированный read_from_txt вида [[1,2,3],[1,2,3],[1,2,3]]
+
+    Returns:
+    List(List(str)) - список списков вид [[1,2,3],[1,2,3],[1,2,3]] 
+    """
+    find_list = []
+    for row in list_file:
+        if row[1].lower() == name.lower():
+            find_list.append(row)
+
+    return find_list
 
 
-def add_string_to_file(filename: str , coding:  str, string: str):
+def string_to_list(string_line: str) -> List[List[str]]:
+    """
+    Возвращает список строк разденных по '\\n' в виде списка элементов разделенных по пробелу [[1,2,3],[1,2,3],[1,2,3]] 
 
-    with open(filename, 'a', encoding=coding) as file:
-        file.write(string)            
+    Args:
+    string:str - строка для преобразования
+
+    Returns:
+    List[List[str]] - список списков вид [[1,2,3],[1,2,3],[1,2,3]] 
+    """
+    list_file = []
+    string = string_line.split('\n')
+    for i in string:
+        list_file.append(i.split(' '))
+    return (list_file)
+
+
+def list_to_string(list_file: List[List[str]]) -> str:
+    """
+    Возвращает строку вида  item_1\\nitem_2\\n....\\item_n\\n
+
+    Args:
+    List[List[str]] - список списков вид [[1,2,3],[1,2,3],[1,2,3]]
+
+    Returns:
+    str - строка (item_1\\nitem_2\\n....\\item_n\\n)
+    """
+    srting = ''
+    for row in list_file:
+        srting += row[0]+' '+row[1]+' '+row[2]+' '+row[3]+'\n'
+    return srting
+
+    
