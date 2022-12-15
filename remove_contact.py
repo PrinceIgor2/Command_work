@@ -2,38 +2,38 @@ import os
 import time
 from user_interface import get_menu_item
 from sty import fg, bg, ef, rs
+
+from functions import read_from_txt, string_to_list, list_to_string
+from functions import find_by_name, write_string_to_txt
+
+
 def delete():
-    new,kash_del = [],[]
     delete_item = input("Введите фамилию / фамилию и имя / номер телефона контакта, который нужно удалить\n> ")
     verify_delete  = input(f"Вы действительно хотите удалить контакт со значением >{delete_item}< ? "
                            f"\nНапишите 'да'/'нет'/'q'(выход в меню)\n> ")
     if verify_delete == "да":
-        for  item  in read_data_string(bd.txt, 'UTF-8'):
-            for i in item:
-                if delete_item.lower()
+        data = read_from_txt('bd.txt', 'UTF-8')
+        data = string_to_list(data)
+        find_data = find_by_name(delete_item, data)
+        find_data = string_to_list(find_data)
 
-
-        with open('bd.txt', 'r', encoding = 'UTF-8') as file:
-            for line in file:
-                if delete_item.lower() not in line.lower():
-                    new.append(line)
-                else:
-                    kash_del.append(line)
-        if len(kash_del) == 0:
+        if len(find_data) == 0:
             resp = input("Не найдено контактов по заданным параметрам. Хотите уточнить свой запрос?"
                   "\nНапишите 'да'/'q'(выход в меню)(\n>")
             delete() if resp.lower() == 'да' else get_menu_item()
 
-        elif len(kash_del) == 1:
-            with open('bd.txt', 'w') as file:
-                file.writelines(new)
+        elif len(find_data) == 1:
+            data = [i for i in data if not i in find_data]
+            data = list_to_string(data)
+            read_from_txt('bd.txt', 'UTF-8', data)
             print('Контакт успешно удален')
-        else:
-            print(f"Под ваш запрос подходят несколько контактов\n", *kash_del)
+        elif len(find_data) > 1:
+            print(f"Под ваш запрос подходят несколько контактов\n", find_data)
             accept = input("Хотите удалить все выбранные контакты? 'да'/'нет'/'q'(выход в меню) \n> ")
-            if accept.lower() == 'да':
-                with open('bd.txt', 'w', encoding = 'UTF-8') as file:
-                    file.writelines(new)
+            if accept == 'да':
+                data = [i for i in data if not i in find_data]
+                data = list_to_string(data)
+                write_string_to_txt('bd.txt', 'UTF-8', data)
                 print('Контакты успешно удалены')
                 time.sleep(2)
                 get_menu_item()
@@ -47,7 +47,7 @@ def delete():
     else:
         delete()
 
-# delete()
+delete()
 
 def delete_all():
     print('Вы вошли в меню полного удаления всех контактов\n')
