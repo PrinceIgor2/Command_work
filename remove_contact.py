@@ -15,25 +15,22 @@ def delete():
         data = read_from_txt('bd.txt', 'UTF-8')
         data = string_to_list(data)
         find_data = find_by_name(delete_item, data)
-        find_data = string_to_list(find_data)
-
+        data = [i for i in data if i not in find_data]
         if len(find_data) == 0:
             resp = input("Не найдено контактов по заданным параметрам. Хотите уточнить свой запрос?"
                   "\nНапишите 'да'/'q'(выход в меню)(\n>")
             delete() if resp.lower() == 'да' else get_menu_item()
 
         elif len(find_data) == 1:
-            data = [i for i in data if not i in find_data]
             data = list_to_string(data)
-            read_from_txt('bd.txt', 'UTF-8', data)
+            write_string_to_txt('bd.txt', 'UTF-8', data)
             print('Контакт успешно удален')
         elif len(find_data) > 1:
-            print(f"Под ваш запрос подходят несколько контактов\n", find_data)
+            print(f"Под ваш запрос подходят несколько контактов\n", *find_data)
             accept = input("Хотите удалить все выбранные контакты? 'да'/'нет'/'q'(выход в меню) \n> ")
             if accept == 'да':
-                data = [i for i in data if not i in find_data]
                 data = list_to_string(data)
-                write_string_to_txt('bd.txt', 'UTF-8', data)
+                add_string_to_txt('bd.txt', 'UTF-8', data)
                 print('Контакты успешно удалены')
                 time.sleep(2)
                 get_menu_item()

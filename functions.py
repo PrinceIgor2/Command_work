@@ -120,4 +120,30 @@ def list_to_string(list_file: List[List[str]]) -> str:
         srting += row[0]+' '+row[1]+' '+row[2]+' '+row[3]+'\n'
     return srting
 
-    
+def give_str_num(input_string: str,
+            min_str: Optional[int] = None,
+            max_str: Optional[int] = None) -> str:
+    """
+    Выпытывает у пользователя строку состоящую из чисел длинной от min_str до  mах_str:
+
+    Args:
+    input_string - предложение ввода
+
+    Returns:
+    str: - строка
+    """
+    while True:
+        try:
+            num = input(input_string)
+            if not num.isdigit():
+                print(f'Вводите только цифры')
+                continue
+            if len(num) < min_str:
+                print(f'Введите строку длиннее {min_str} символов')
+                continue
+            if len(num)> max_str:
+                print(f'Введите строку короче {max_str} символов')
+                continue
+            return num
+        except ValueError:
+            print('Что пошло не так, попробуйте еще раз')
