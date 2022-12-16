@@ -16,6 +16,3 @@ def import_data(path_file_phone_db, coding):
             print(
                 'Такого файла не существует. Проверьте и укажите корректный файл для импорта.')
             break
-
-
-import_data('phone_db.txt', 'utf-8')
