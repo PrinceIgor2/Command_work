@@ -1,4 +1,4 @@
-from functions import give_int_num, add_string_to_txt
+from functions import give_str_num, add_string_to_txt
 
 filename = 'phone_db.txt'
 
@@ -27,13 +27,13 @@ def add():
     """
     firstname = input_firstname() 
     lastname = input_lastname() 
-    phone_number = give_int_num( "Номер телефона: ", min_num=100, max_num=99999999999) # проверка телефона 
-    phone_number = str(phone_number)
+    phone_number = give_str_num( "Номер телефона: ", min_num=3, max_num=13) # проверка телефона 
+    #phone_number = str(phone_number)
     comment = input('Введите комментарий: ')
-    contact_details = f'{firstname} {lastname} {phone_number} {comment}' #формируем итоговую строку
+    contact_details = f'{firstname} {lastname} {phone_number} {comment} \n' #формируем итоговую строку
     add_string_to_txt(filename, 'UTF-8', contact_details) #запись в файл 
     # myfile = open(filename, "a", encoding='UTF-8') 
     # myfile.write(contact_details) 
     print(f'Контакт:\n  {contact_details} сохранен!') 
 
-#add()
+add()
