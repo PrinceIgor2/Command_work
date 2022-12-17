@@ -8,7 +8,8 @@ def import_data(path_file_phone_db, coding):
         data = read_from_txt(path_file_import, coding)
         with open(path_file_phone_db, 'a+', encoding=coding) as ph_db:
             ph_db.write(f'\n')
-            for i in data:
-                ph_db.write(f'{i}')
+            # for i in data:
+            #     ph_db.write(f'{i}')            
+            ph_db.write(data)    
     except:
         print('Такого файла не существует. Проверьте и укажите корректный файл для импорта.')
