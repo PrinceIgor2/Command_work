@@ -1,7 +1,6 @@
 from user_interface import get_menu_item
 import add_contact, change_contact
-#import remove_contact
-import find_contact
+import remove_contact, find_contact
 import export_in_file, import_from_file
 import sys
 import os
@@ -17,8 +16,7 @@ def start():
             change_contact.change()
 
         elif menu_item == 3:
-            #remove_contact.delete()  
-            f = 5  
+            remove_contact.delete()               
 
         elif menu_item == 4:
             find_contact.find()
@@ -30,11 +28,8 @@ def start():
             import_from_file.import_data('phone_db.txt', 'utf-8')
             
         elif menu_item == 7:
-            try:
-                os.remove('hone_db.txt')
-                print('список контактов удален') 
-            except:
-                print("При удалении возникла ошибка.")
+            remove_contact.delete_all()
+
 
         elif menu_item == 0:
             sys.exit('работа завершена') 
