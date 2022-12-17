@@ -6,7 +6,7 @@ def change():
     '''
         Функция позволяет изменить выбранный пользователем контакт
     '''
-    delete_item = input("Введите фамилию / фамилию и имя / номер телефона контакта, который нужно изменить\n> ")
+    delete_item = input("введите данные контакта, который нужно изменить\n> ")
     data_1 = read_from_txt(path, 'UTF-8')
     data_1 = string_to_list(data_1)
     find_data = find_by_name(delete_item, data_1)
