@@ -126,7 +126,7 @@ def write_list_to_csv(path_file: str, coding: str, list_to_write: List[List[str]
     coding - кодировка ('utf-8'),
     list_to_write - список для записи
     """
-    with open(path_file, 'w', coding) as w_file:
+    with open(path_file, 'w', encoding=coding) as w_file:
             file_writer = csv.writer(w_file, delimiter = "," , lineterminator="\n")
             for row in list_to_write:       
                 file_writer.writerow(row) 
@@ -193,5 +193,5 @@ def list_to_string(list_file: List[List[str]])-> str:
     """
     srting =''
     for row in list_file:   
-        srting += row[0]+' '+row[1]+' '+row[2]+' '+row[3]+'\n'
-    return srting
+        srting += row[0]+' '+row[1]+' '+row[2]+' '+row[3]+'\n'        
+    return srting[:-1]
