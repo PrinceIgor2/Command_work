@@ -27,7 +27,7 @@ def add():
     """
     firstname = input_firstname() 
     lastname = input_lastname() 
-    phone_number = give_str_num( "Номер телефона: ", min_num=3, max_num=13) # проверка телефона 
+    phone_number = give_str_num( "Номер телефона: ", 3, 13) # проверка телефона 
     #phone_number = str(phone_number)
     comment = input('Введите комментарий: ')
     contact_details = f'{firstname} {lastname} {phone_number} {comment} \n' #формируем итоговую строку
@@ -35,5 +35,13 @@ def add():
     # myfile = open(filename, "a", encoding='UTF-8') 
     # myfile.write(contact_details) 
     print(f'Контакт:\n  {contact_details} сохранен!') 
+from functions import give_int_num, write_string_to_txt, list_to_string
 
-add()
+def create_db():
+
+    check = give_int_num('Введите 1 если ходите создать список контактов (существующий будет очищен!), 0 - выйти > ', min_num=0, max_num=1)
+    if check == 1:    
+        zagolovok = [['фамилия', 'имя', 'телефон', 'комментарий']]
+        path_file = 'phone_db.txt'
+        write_string_to_txt(path_file, 'utf-8', list_to_string(zagolovok))
+# add()
