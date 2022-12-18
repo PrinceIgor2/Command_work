@@ -1,7 +1,4 @@
-
-import sys
 from functions import read_from_txt, string_to_list, list_to_string
-
 
 def find():
     file_path = 'phone_db.txt'
