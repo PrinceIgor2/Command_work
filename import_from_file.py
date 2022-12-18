@@ -31,5 +31,5 @@ def import_data(path_file_phone_db, coding):
         print('Нет такого файла')      
 
 if __name__ == '__main__':
-    # import_data('phone_db.txt', 'utf-8')
+    import_data('phone_db.txt', 'utf-8')
     import_data('phone_list.csv', 'utf-8')
