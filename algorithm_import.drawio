@@ -4,17 +4,18 @@
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="4" value="" style="edgeStyle=none;html=1;" parent="1" source="2" target="3" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
+                <mxCell id="4" value="" style="edgeStyle=none;html=1;" parent="1" source="2" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="145" y="80" as="targetPoint"/>
+                    </mxGeometry>
                 </mxCell>
                 <mxCell id="2" value="Start" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="85" y="30" width="120" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="6" value="" style="edgeStyle=none;html=1;" parent="1" source="3" target="5" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="3" value="phone_db" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
-                    <mxGeometry x="85" y="80" width="120" height="40" as="geometry"/>
+                <mxCell id="6" value="" style="edgeStyle=none;html=1;" parent="1" target="5" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="145" y="120" as="sourcePoint"/>
+                    </mxGeometry>
                 </mxCell>
                 <mxCell id="7" style="edgeStyle=none;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" parent="1" source="5" edge="1">
                     <mxGeometry relative="1" as="geometry">
@@ -41,29 +42,35 @@
                         <mxPoint x="145" y="430" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="11" value="path.splitext (phone_db)&lt;br&gt;path.splitex (phone_import)&lt;br&gt;(определяем расширение файла)" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="40" y="350" width="210" height="60" as="geometry"/>
+                <mxCell id="11" value="path.splitex (phone_import)&lt;br&gt;(определяем расширение файла)" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="37.5" y="370" width="210" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="17" value="да" style="edgeStyle=none;html=1;" parent="1" source="15" target="16" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="29" value="нет" style="edgeStyle=none;html=1;" parent="1" source="15" target="27" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
+                <mxCell id="29" value="нет" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="15" target="31" edge="1">
+                    <mxGeometry x="-0.3822" relative="1" as="geometry">
+                        <mxPoint x="322.56097560975604" y="466.58536585365846" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="425" y="465"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
                 </mxCell>
-                <mxCell id="15" value="if ext&amp;nbsp;&lt;span style=&quot;color: rgb(240 , 240 , 240) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 12px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(42 , 42 , 42) ; display: inline ; float: none&quot;&gt;phone_db =&amp;nbsp;&amp;nbsp;&lt;br&gt;&amp;nbsp;ext phone_import = txt&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="40" y="430" width="210" height="80" as="geometry"/>
+                <mxCell id="15" value="if&lt;span style=&quot;color: rgb(240 , 240 , 240) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 12px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(42 , 42 , 42) ; display: inline ; float: none&quot;&gt;&amp;nbsp;ext phone_import = txt&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="430" width="210" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="19" value="" style="edgeStyle=none;html=1;" parent="1" source="16" target="18" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="16" value="чтение phone_import" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                <mxCell id="16" value="чтение phone_import&lt;br&gt;(txt)" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="85" y="550" width="120" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="22" value="" style="edgeStyle=none;html=1;" parent="1" source="18" target="20" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="18" value="запись phone_db (txt)" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="85" y="620" width="120" height="40" as="geometry"/>
+                <mxCell id="18" value="запись phone_db&lt;br&gt;(txt)&amp;nbsp;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="85" y="619" width="125" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="41" style="edgeStyle=none;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="20" target="43" edge="1">
                     <mxGeometry relative="1" as="geometry">
@@ -71,40 +78,25 @@
                         <Array as="points">
                             <mxPoint x="145" y="780"/>
                             <mxPoint x="470" y="780"/>
-                            <mxPoint x="760" y="780"/>
+                            <mxPoint x="640" y="780"/>
+                            <mxPoint x="640" y="710"/>
+                            <mxPoint x="640" y="520"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="20" value="Контакты импортированы" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
                     <mxGeometry x="85" y="690" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="45" style="edgeStyle=none;html=1;" parent="1" source="21" edge="1">
-                    <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="760" y="470" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="21" value="Невозможно импортировать контакты" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
-                    <mxGeometry x="590" y="440" width="120" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="37" value="да" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="27" target="31" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="38" value="нет" style="edgeStyle=none;html=1;" parent="1" source="27" target="21" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="27" value="if ext&amp;nbsp;&lt;span style=&quot;color: rgb(240 , 240 , 240) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 12px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(42 , 42 , 42) ; display: inline ; float: none&quot;&gt;phone_db =&amp;nbsp;&lt;br&gt;&amp;nbsp;ext phone_import = csv&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="320" y="430" width="210" height="80" as="geometry"/>
-                </mxCell>
                 <mxCell id="30" value="" style="edgeStyle=none;html=1;" parent="1" source="31" target="33" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="31" value="чтение phone_import" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                <mxCell id="31" value="чтение phone_import&lt;br&gt;(csv)" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="365" y="549" width="120" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="32" value="" style="edgeStyle=none;html=1;" parent="1" source="33" target="34" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="33" value="запись phone_db (csv)" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                <mxCell id="33" value="запись phone_db&lt;br&gt;(txt)&amp;nbsp;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="365" y="619" width="120" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="42" style="edgeStyle=none;html=1;" parent="1" source="34" edge="1">
@@ -122,7 +114,10 @@
                     <mxGeometry x="350" y="230" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="43" value="End" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="700" y="245" width="120" height="30" as="geometry"/>
+                    <mxGeometry x="580" y="245" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="path_file_phone_db = phone_db.txt&lt;br&gt;coding = utf-8" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="80" width="205" height="40" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
