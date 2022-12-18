@@ -79,7 +79,7 @@ def import_data(path_file_phone_db, coding):
     """
     path_file_import = input('Укажите имя файла откуда хотите импортировать контакты -> ')
     if os.path.exists(path_file_import) == True:                                            # проверка на наличие файла
-        extension_import = path.splitext(path_file_import)[1]                               # возвращаем кортеж, где 2-ой элемент это расширение файла
+        extension_import = path.splitext(path_file_import)[1]                               # возвращаем кортеж
         extension_phone_db = path.splitext(path_file_phone_db)[1]                               
         if extension_import == extension_phone_db == '.txt':                                                          
             data_txt = read_from_txt_wo_header(path_file_import, coding)
