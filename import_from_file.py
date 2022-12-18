@@ -17,6 +17,19 @@ def write_to_csv(path_file: str, coding: str, list_to_write: List[List[str]]):
             for row in list_to_write:       
                 file_writer.writerow(row)
 
+def write_string_to_txt(path_file_phone_db: str, data_txt: str, coding: str):
+    """
+    Записывает строку в файл 
+
+    Args:
+    path_file - путь до файла, 
+    coding - кодировка ('utf-8'),
+    """  
+    with open(path_file_phone_db, 'a+', encoding=coding) as w_file:
+        w_file.write(f'\n')
+        for i in data_txt:
+            w_file.write(f'{i}')
+
 def read_from_csv_wo_header(path_file: str, coding: str, delim:str ):
     """
     Считывает csv файл (без заголовка) и возвращает строку 
@@ -52,18 +65,6 @@ def read_from_txt_wo_header(path_file: str, coding: str) -> str:
         data = r_file.readlines()[1:]
     return(data)
 
-def write_string_to_txt(path_file: str, coding: str, string_line: str):
-    """
-    Записывает строку в файл 
-
-    Args:
-    path_file - путь до файла, 
-    coding - кодировка ('utf-8'),
-    string_line - строка для записи
-    """
-    with open(path_file, 'a+', encoding=coding) as w_file:     
-        w_file.write(string_line)
-
 def import_data(path_file_phone_db, coding):
     """
     Импортирует контакты из файлов с расширением .txt и .csv. 
@@ -80,17 +81,14 @@ def import_data(path_file_phone_db, coding):
     if os.path.exists(path_file_import) == True:                                            # проверка на наличие файла
         extension_import = path.splitext(path_file_import)[1]                               # возвращаем кортеж, где 2-ой элемент это расширение файла
         extension_phone_db = path.splitext(path_file_phone_db)[1]                               
-        if extension_import == '.txt' and extension_phone_db == '.txt':                                                          
+        if extension_import == extension_phone_db == '.txt':                                                          
             data_txt = read_from_txt_wo_header(path_file_import, coding)
-            with open(path_file_phone_db, 'a+', encoding=coding) as ph_db:
-                ph_db.write(f'\n')
-                for i in data_txt:
-                    ph_db.write(f'{i}')
-                    print(f'Контакты импортированы в файл --> {path_file_phone_db}')
-        elif extension_import == '.csv' and extension_phone_db == '.csv':
+            write_string_to_txt(path_file_phone_db, data_txt, coding)
+            print(f'Контакты импортированы из файла {path_file_import} в файл --> {path_file_phone_db}')
+        elif extension_import == extension_phone_db == '.csv':
             data_csv = read_from_csv_wo_header(path_file_import, coding, ',')
             write_to_csv(path_file_phone_db, coding, data_csv)
-            print(f'Контакты импортированы в файл --> {path_file_phone_db}')
+            print(f'Контакты импортированы из файла {path_file_import} в файл --> {path_file_phone_db}')
         else:
             print(f'Невозможно импортировать контакты из файла {path_file_import} в {path_file_phone_db}')
     else:
