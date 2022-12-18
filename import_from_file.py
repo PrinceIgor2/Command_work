@@ -1,7 +1,6 @@
 from functions import read_from_txt_wo_header, write_to_csv, read_from_csv_wo_header
 from os import path
 import os.path
-import csv
 
 def import_data(path_file_phone_db, coding):
     """
