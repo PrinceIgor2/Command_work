@@ -1,6 +1,6 @@
 from user_interface import get_menu_item
 from functions import read_from_txt, string_to_list, list_to_string
-from functions import find_by_name, write_string_to_txt
+from functions import find, write_string_to_txt
 path = 'phone_db.txt'
 def change():
     '''
