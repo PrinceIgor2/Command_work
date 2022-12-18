@@ -1,6 +1,6 @@
 from functions import give_str_num, add_string_to_txt
+from functions import give_int_num, write_string_to_txt, list_to_string
 
-filename = 'phone_db.txt'
 
 def input_firstname()->str:
     """_Ввод фамилии, если пользователь ввел фамилию
@@ -25,17 +25,16 @@ def input_lastname()->str:
 def add(): 
     """_Добавление контакта в файл и проверка номера телефона на число и минимальное и максимальное количество символов_
     """
+	
+    filename = 'phone_db.txt'
     firstname = input_firstname() 
     lastname = input_lastname() 
     phone_number = give_str_num( "Номер телефона: ", 3, 13) # проверка телефона 
-    #phone_number = str(phone_number)
     comment = input('Введите комментарий: ')
     contact_details = f'{firstname} {lastname} {phone_number} {comment} \n' #формируем итоговую строку
     add_string_to_txt(filename, 'UTF-8', contact_details) #запись в файл 
-    # myfile = open(filename, "a", encoding='UTF-8') 
-    # myfile.write(contact_details) 
     print(f'Контакт:\n  {contact_details} сохранен!') 
-from functions import give_int_num, write_string_to_txt, list_to_string
+
 
 def create_db():
 
@@ -44,4 +43,3 @@ def create_db():
         zagolovok = [['фамилия', 'имя', 'телефон', 'комментарий']]
         path_file = 'phone_db.txt'
         write_string_to_txt(path_file, 'utf-8', list_to_string(zagolovok))
-# add()
