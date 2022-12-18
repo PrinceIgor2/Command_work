@@ -1,17 +1,15 @@
 import os
 import time
-from user_interface import get_menu_item
-from sty import fg, bg, ef, rs
 
 from functions import read_from_txt, string_to_list, list_to_string
-from functions import find_by_name, write_string_to_txt
+from functions import find_by_name, write_string_to_txt, add_string_to_txt
 
-path = 'phone_db.txt'
 def delete():
     '''
         Функция позволяет удалить один или несколько выбранных
         пользователем контактов
     '''
+    path = 'phone_db.txt'
     delete_item = input("Введите данные контакта, который нужно удалить\n> ")
     verify_delete  = input(f"Вы действительно хотите удалить контакт со значением >{delete_item}< ? "
                            f"\nНапишите 'да'/'нет'/'q'(выход в меню)\n> ")
@@ -62,7 +60,7 @@ def delete_all():
     resp_2 = input('Вы уверены что хотите удалить все контакты?\nда/нет\n> ')
     if resp_2.lower() != 'да':
         pass
-    path_1 = '/Command_work/bd.txt'
+    path_1 = '/Command_work/bd.txt' # поменять на реальный
     os.remove(path_1)
 
 

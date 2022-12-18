@@ -1,11 +1,12 @@
 from user_interface import get_menu_item
 from functions import read_from_txt, string_to_list, list_to_string
-from functions import find, write_string_to_txt
-path = 'phone_db.txt'
-def change():
+from functions import find_by_name, write_string_to_txt
+
+def change():    
     '''
         Функция позволяет изменить выбранный пользователем контакт
     '''
+    path = 'phone_db.txt'
     delete_item = input("введите данные контакта, который нужно изменить\n> ")
     data_1 = read_from_txt(path, 'UTF-8')
     data_1 = string_to_list(data_1)
