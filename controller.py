@@ -29,7 +29,9 @@ def start():
             
         elif menu_item == 7:
             remove_contact.delete_all()
-
+        
+        elif menu_item == 8:
+            add_contact.create_db()
 
         elif menu_item == 0:
             sys.exit('работа завершена') 
