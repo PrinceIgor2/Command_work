@@ -2,7 +2,11 @@ from functions import give_int_num, read_from_txt, write_string_to_txt
 from functions import list_to_string, string_to_list, write_list_to_csv
 from find_contact import find
 
-def export():
+def export() -> None:
+    '''
+    Функция позволяет экспортировать один, несколько выбранных или весь список контактов
+    в файл 'export_phone.txt' или 'export_phone.csv' по выбору пользователя
+    '''
      
     file = 'phone_db.txt'
     coding = 'utf-8' 

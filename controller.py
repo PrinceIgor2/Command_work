@@ -25,7 +25,7 @@ def start():
             export_in_file.export() 
         
         elif menu_item == 6:
-            import_from_file.import_data('phone_db.txt', 'utf-8')
+            import_from_file.import_data()
             
         elif menu_item == 7:
             remove_contact.delete_all()
