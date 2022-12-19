@@ -36,7 +36,7 @@ def find():
             
     
     if len(temp) == 0:
-        print(f"Попробуй поискать еще разок {list_to_string(pb)}")
+        print(f"Попробуй поискать еще разок\n {list_to_string(pb)}")
     else: 
         print('Найдено:\n', list_to_string(temp))
 

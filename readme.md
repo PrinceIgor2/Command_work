@@ -3,10 +3,6 @@
 Задание в группах: Создать телефонный справочник с возможностью импорта и экспорта данных в txt и csv форматах.
 ```
 
-<code>[CSV в Python][https://all-python.ru/osnovy/csv.html]
-</code>
-
-
 ## Распредление задач
 
 Александр - import_from_file.py
@@ -19,30 +15,12 @@
 
 Сергей - export_in_file.py, functions.py, controller.py, constants.py, user_interface.py
 
-add_contact.py
-change_contact.py
-constants.py
-controller.py
-export_in_file.py
-find_contact.py
-functions.py
-import_from_file.py
-main.py
-remove_contact.py
-user_interface.py
 
-contact.csv
-phone_db.txt
-phone_list.csv
-list_contact.txt
-readme.md
+## Блок-схема программы
 
-add_contact.svg
+На блок-схеме изображена схема взаимодействия между модулями программы с указанием перелаваемых функций
 
+![блок-схема](telephone.drawio.png)
 
-
-## Блок-схема
-
-![блок-схема]("Command_work\телефонный справочник.png" "блок-схема")
-
+В столбце справа, краткое описание модулей.
 

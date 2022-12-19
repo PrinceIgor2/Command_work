@@ -11,8 +11,7 @@ def export():
     
     check = give_int_num('Введите 1 если ходите экспортировать все контакты, 2 конкретный контакт > ', min_num=1, max_num=2)
     if check == 2:        
-        find_spicok = find()
-    # если список пустой !!!!!....
+        find_spicok = find()    
         if len(find_spicok) == 0:
             print(f"\nНичего не найдено, попробуте заново")
             return
@@ -40,9 +39,7 @@ def export():
     else:
         path_file = 'export_phone.csv'
         write_list_to_csv(path_file, coding, find_spicok)
-    
-                
-
+                 
         
     print(f'{cont} в файл {path_file}')
 
